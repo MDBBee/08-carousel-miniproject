@@ -17,8 +17,12 @@ function Carousel() {
   };
 
   useEffect(() => {
-    // const intervalID
-  }, []);
+    const intervalID = setInterval(() => {
+      prevSlide();
+    }, 2000);
+    return () => clearInterval(intervalID);
+  }, [currentPerson]);
+
   return (
     <section className="slider-container">
       {people.map((person, personIndex) => {
@@ -53,9 +57,3 @@ function Carousel() {
   );
 }
 export default Carousel;
-
-// style={{
-//           transform: `translateX(${100 * (personIndex - currentPerson)}%)`,
-//           opacity: personIndex === currentPerson ? 1 : 0,
-//           visibility: personIndex === currentPerson ? 'visible' : 'hidden',
-//         }}
