@@ -270,7 +270,7 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  transition: var(--transition);
+  transition: all 1s ease-in;
 }
 .person-img {
   width: 150px;
